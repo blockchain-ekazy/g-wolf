@@ -1,0 +1,341 @@
+@font-face {
+  font-family: "Akira";
+  src: url(./Fonts/Akira\ Expanded\ Demo.otf);
+}
+
+.Sara {
+  min-height: 100vh;
+  font-family: "Akira";
+  background-color: #a2a2a2;
+}
+.Img {
+  width: 250px !important;
+  max-width: 100%;
+}
+.Txt {
+  width: 100%;
+  max-width: 450px !important;
+}
+.MainImg {
+  width: 100%;
+  max-width: 450px;
+  border: 5px solid black;
+  border-radius: 20px;
+}
+.MainRow {
+  padding-top: 50px;
+}
+.ico {
+  background-color: black;
+  color: #a2a2a2;
+  padding: 6px;
+  border-radius: 100px;
+  font-size: 25px;
+  cursor: pointer;
+}
+.nav-link {
+  transition: 1s;
+}
+.nav-link:hover {
+  color: #f4f0ab !important;
+  transition: 1s;
+}
+
+/* -------------------------------Mint----------------------- */
+
+.ConnectBtn {
+  background-color: black;
+  color: white;
+  transition: 1s;
+  font-size: 20px;
+}
+.ConnectBtn:hover {
+  color: white;
+  background-color: transparent;
+  border: 2px solid black;
+}
+.ImgsMintFtr {
+  position: relative;
+  top: -100px;
+
+  width: 300px !important;
+}
+.Imgsftrmint {
+  background-image: url(./Imgs/MitFtr.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+}
+@media only screen and (max-width: 600px) {
+  .Imgsftrmint {
+    background-image: none;
+  }
+}
+
+/* -------------------------------Shop----------------------- */
+.ImgShop {
+  height: 250px;
+  width: 500px !important;
+  max-width: 100%;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.SimgDiv {
+  object-fit: cover;
+}
+.txtShop {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-weight: bold;
+  color: black;
+}
+.Coin {
+  width: 30px;
+  max-width: 100%;
+}
+.ShopBtn {
+  background-color: #282525;
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: white;
+  font-size: 20px;
+}
+
+/* -------------------------------RD----------------------- */
+.TxtA {
+  font-size: 20px !important;
+}
+.RowA {
+  background-color: #4e4b4b;
+  color: white;
+  border-radius: 10px;
+  padding: 20px 100px;
+}
+@media only screen and (max-width: 600px) {
+  .RowA {
+    padding: 20px 0px;
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+.FontAre {
+  font-family: "Ubuntu" !important;
+}
+
+.phaseTextPosition h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  position: absolute;
+  top: 107%;
+  left: 0px;
+  transform: rotate(270deg) translate(50%, -20%);
+  background: white none repeat scroll 0% 0%;
+  padding: 9px 30px;
+  border-radius: 5px;
+  color: rgb(78, 75, 75);
+}
+@media only screen and (max-width: 600px) {
+  .phaseTextPosition h2 {
+    display: none;
+  }
+}
+
+.phaseTextPositionB h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  position: absolute;
+  top: 170%;
+  left: 0px;
+  transform: rotate(270deg) translate(50%, -20%);
+  background: white none repeat scroll 0% 0%;
+  padding: 9px 30px;
+  border-radius: 5px;
+  color: rgb(78, 75, 75);
+}
+@media only screen and (max-width: 600px) {
+  .phaseTextPositionB h2 {
+    display: none;
+  }
+}
+
+.phaseTextPositionC h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  position: absolute;
+  top: 240%;
+  left: 0px;
+  transform: rotate(270deg) translate(50%, -20%);
+  background: white none repeat scroll 0% 0%;
+  padding: 9px 30px;
+  border-radius: 5px;
+  color: rgb(78, 75, 75);
+}
+@media only screen and (max-width: 600px) {
+  .phaseTextPositionC h2 {
+    display: none;
+  }
+}
+/* ///////////////// */
+@media (max-width: 992px) {
+  .hWudry .mobile-menu button {
+    border: medium none;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    background: transparent none repeat scroll 0% 0%;
+    z-index: 542;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
+@media (max-width: 992px) {
+  .hWudry .mobile-menu {
+    display: flex;
+  }
+}
+.hWudry .nav-link-container ul a img {
+  width: 40px;
+}
+.hWudry .nav-link-container ul a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  font-family: Akira;
+  letter-spacing: 2px;
+  font-weight: 300;
+  transition: all 0.5s ease-in-out 0s;
+}
+@media (max-width: 992px) {
+  .hWudry .nav-link-container ul a {
+    text-align: center;
+  }
+}
+.hWudry .nav-link-container .social-media-icon a {
+  margin: 0px 10px;
+  font-size: 30px;
+}
+.hWudry .nav-link-container .social-media-icon {
+  display: flex;
+  margin-top: 12px;
+  position: absolute;
+  right: 20px;
+}
+@media (max-width: 992px) {
+  .hWudry .nav-link-container .social-media-icon {
+    -moz-box-pack: center;
+    justify-content: center;
+    position: relative;
+    padding-left: 40px;
+  }
+}
+@media (max-width: 1199.98px) {
+  .hWudry .nav-link-container ul li {
+    margin: 0px 8px;
+  }
+}
+.hWudry .nav-link-container ul li {
+  margin: 0px 15px;
+}
+.hWudry .nav-link-container ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  -moz-box-align: center;
+  align-items: center;
+}
+.hWudry {
+  min-height: 80px;
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  -moz-box-align: center;
+  align-items: center;
+  padding: 0px 20px;
+}
+.hWudry .nav-logo {
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out 0s;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.hWudry .nav-link-container {
+  display: flex;
+}
+@media (max-width: 992px) {
+  .hWudry .nav-link-container {
+    position: absolute;
+    left: 0%;
+    top: 0px;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    background: rgb(162, 162, 162) none repeat scroll 0% 0%;
+    transition: all 0.5s ease-out 0s;
+    z-index: 55;
+  }
+}
+.hWudry .mobile-menu {
+  display: none;
+}
+@media (max-width: 992px) {
+  .hWudry .mobile-menu {
+    display: flex;
+  }
+}
+@media (max-width: 992px) {
+  .hWudry .nav-link-container ul {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  .hWudry .nav-link-container ul {
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .expanded {
+    height: 350px !important;
+  }
+}
+.mainbg {
+  background-image: url(./Imgs/Ftr.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.mainbg2 {
+  background-image: url(./Imgs/MitFtr.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (max-width: 768px) {
+  .Txt {
+    width: 300px !important;
+    max-width: 100%;
+  }
+  .MainImg {
+    width: 100%;
+    max-width: 300px;
+    border: 5px solid black;
+    border-radius: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+.main {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
