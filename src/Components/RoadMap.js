@@ -123,7 +123,9 @@ export default function RoadMap() {
               </ul>
             </div>
 
-            <div class="phaseTextPosition"><h2>PHASE I</h2></div>
+            <div class="phaseTextPosition">
+              <h2>PHASE I</h2>
+            </div>
 
             <div className="col-md-6">
               <ul>
@@ -202,8 +204,9 @@ export default function RoadMap() {
               </ul>
             </div>
 
-
-            <div class="phaseTextPositionB"><h2>PHASE II</h2></div>
+            <div class="phaseTextPositionB">
+              <h2>PHASE II</h2>
+            </div>
 
             <div className="col-md-6">
               <ul>
@@ -278,7 +281,9 @@ export default function RoadMap() {
                 </ul>
               </ul>
             </div>
-            <div class="phaseTextPositionC"><h2>PHASE III</h2></div>
+            <div class="phaseTextPositionC">
+              <h2>PHASE III</h2>
+            </div>
 
             <div className="col-md-6">
               <ul>
@@ -314,7 +319,7 @@ export default function RoadMap() {
               </ul>
 
               <ul>
-                <li style={{fontSize:"17px"}}>BREEDING/MUTATION/HUMANS?!</li>
+                <li style={{ fontSize: "17px" }}>BREEDING/MUTATION/HUMANS?!</li>
                 <ul className="pt-3">
                   <li className="FontAre">
                     {" "}
