@@ -5,7 +5,6 @@ import MintTxt from "./Imgs/MintTxt.png";
 import React, { useEffect, useState } from "react";
 import abi from "./abi.json";
 import Web3 from "web3";
-import detectEthereumProvider from "@metamask/detect-provider";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -21,12 +20,13 @@ const merkleTreeFree = new MerkleTree(leafFree, keccak256, { sortPairs: true });
 
 export default function Mint() {
   const REACT_APP_CONTRACT_ADDRESS =
-    "0x59dE85ecb63b49bCe97D9faD5b58e97b4BaBB7cf";
-  const SELECTEDNETWORK = "4";
+    "0xdf6430F19446b01a9C024766790f9a3d2ebc529D";
+  const SELECTEDNETWORK = "1";
   const SELECTEDNETWORKNAME = "Ethereum";
   const [quantity, setQuantity] = useState(1);
   const [walletConnected, setWalletConnected] = useState(false);
-  const [minted, setMinted] = useState(false);
+  const [minted, setMinted] = useState(0);
+  const [max, setMax] = useState(10);
 
   function checkWhitelistFree(a) {
     const check = keccak256(a);
@@ -62,46 +62,69 @@ export default function Mint() {
     let status = await ct.methods.status().call();
 
     if (status == 1) {
-      await toast.promise(
-        ct.methods.freeMint(quantity, getProofFree(m)).send({ from: m }),
-        {
-          pending: "Mint in Progress!!",
-          success: "Mint Success!!",
-          error: "Mint Failed!!",
-        }
-      );
+      if (
+        Number(await ct.methods.numberMinted(m).call()) + Number(quantity) <=
+        10
+      )
+        await toast.promise(
+          ct.methods.freeMint(quantity, getProofFree(m)).send({ from: m }),
+          {
+            pending: "Mint in Progress!!",
+            success: "Mint Success!!",
+            error: "Mint Failed!!",
+          }
+        );
+      else toast.error("Max 10 mints allowed in Free, select less quantity!!");
     } else if (status == 2) {
-      let p = await ct.methods.PRICE().call();
-      await toast.promise(
-        ct.methods
-          .whitelistMint(quantity, getProofWL(m))
-          .send({ from: m, value: p }),
-        {
-          pending: "Mint in Progress!!",
-          success: "Mint Success!!",
-          error: "Mint Failed!!",
-        }
-      );
+      if (
+        Number(await ct.methods.numberMinted(m).call()) + Number(quantity) <=
+        10
+      ) {
+        let p = await ct.methods.PRICE().call();
+        await toast.promise(
+          ct.methods
+            .whitelistMint(quantity, getProofWL(m))
+            .send({ from: m, value: p * quantity }),
+          {
+            pending: "Mint in Progress!!",
+            success: "Mint Success!!",
+            error: "Mint Failed!!",
+          }
+        );
+      } else
+        toast.error("Max 10 mints allowed in Free, select less quantity!!");
     } else if (status == 3) {
-      let p = await ct.methods.PRICE().call();
-      await toast.promise(
-        ct.methods.mint(quantity).send({ from: m, value: p }),
-        {
-          pending: "Mint in Progress!!",
-          success: "Mint Success!!",
-          error: "Mint Failed!!",
-        }
-      );
+      if (
+        Number(await ct.methods.numberMinted(m).call()) + Number(quantity) <=
+        10
+      ) {
+        let p = await ct.methods.PRICE().call();
+        await toast.promise(
+          ct.methods.mint(quantity).send({ from: m, value: p * quantity }),
+          {
+            pending: "Mint in Progress!!",
+            success: "Mint Success!!",
+            error: "Mint Failed!!",
+          }
+        );
+      } else
+        toast.error("Max 10 mints allowed in Free, select less quantity!!");
     }
   };
 
   const connectWallet = async () => {
+    console.log(merkleTree.getHexRoot());
     window.web3 = new Web3(window.ethereum);
     let web3 = window.web3;
 
     await window.ethereum.enable();
     let m = await web3.eth.getAccounts();
     m = m[0];
+
+    if ((await web3.eth.net.getId()) != SELECTEDNETWORK) {
+      toast.error('Enable "' + SELECTEDNETWORKNAME + '" network!');
+      return false;
+    }
 
     let ct = new web3.eth.Contract(abi, REACT_APP_CONTRACT_ADDRESS);
     let status = await ct.methods.status().call();
@@ -154,7 +177,7 @@ export default function Mint() {
                     src="./twitter.png"
                   />
                 </a>
-                <a href="https://opensea.io/WFGStudio" target="_blank">
+                <a href="https://opensea.io/collection/wfg" target="_blank">
                   <img className="img-fluid" alt="sea" src="./os.png" />
                 </a>
               </li>
@@ -199,6 +222,7 @@ export default function Mint() {
                 <button
                   className="count ConnectBtn btn mx-3 "
                   onClick={() => setQuantity(quantity + 1)}
+                  disabled={quantity == max}
                 >
                   +
                 </button>

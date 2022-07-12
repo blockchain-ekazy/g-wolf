@@ -30,10 +30,10 @@ export default function Shop() {
   return (
     <div className="Sara">
       <nav class="navbar navbar-expand-lg navbar-light ">
-      <a href="/">
-
-<img className="w-25 Img" src={NavImg}></img>
-</a>        <button
+        <a href="/">
+          <img className="w-25 Img" src={NavImg}></img>
+        </a>{" "}
+        <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -44,7 +44,6 @@ export default function Shop() {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item active">
@@ -69,7 +68,7 @@ export default function Shop() {
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <a href="https://opensea.io/WFGStudio">
+            <a href="https://opensea.io/collection/wfg">
               <img
                 className="w-"
                 style={{ cursor: "pointer" }}
@@ -112,16 +111,14 @@ export default function Shop() {
           <div className="col-md-3">
             <div className=" mx-5 pb-5">
               <div className="SimgDiv">
-
-              <img className="ImgShop" src={S2}></img>
+                <img className="ImgShop" src={S2}></img>
               </div>
               <p className=" text-center mx-5 txtShop pt-2">
                 Nitro Classic- 1 Month{" "}
               </p>
               <button className="btn d-block mx-auto ShopBtn">
                 <div className="SimgDiv">
-
-                <img className="Coin pr-2 " src={coin}></img>5,500 points
+                  <img className="Coin pr-2 " src={coin}></img>5,500 points
                 </div>
               </button>
             </div>

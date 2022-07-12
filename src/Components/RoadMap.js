@@ -50,7 +50,7 @@ export default function RoadMap() {
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-              <a href="https://opensea.io/WFGStudio">
+              <a href="https://opensea.io/collection/wfg">
                 <img
                   className="w-"
                   style={{ cursor: "pointer" }}

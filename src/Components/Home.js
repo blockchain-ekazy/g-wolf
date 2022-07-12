@@ -38,7 +38,7 @@ export default function Home() {
               <a href="https://twitter.com/wolfgangtwit" target="_blank">
                 <img class="img-fluid" alt="twitter" src="./twitter.png" />
               </a>
-              <a href="https://opensea.io/WFGStudio" target="_blank">
+              <a href="https://opensea.io/collection/wfg" target="_blank">
                 <img class="img-fluid" alt="sea" src="./os.png" />
               </a>
             </li>
